@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import java.math.BigInteger;
+import java.util.List;
 
 @RestController
 @RequestMapping("goods")
@@ -19,10 +20,10 @@ public class GoodsController {
     private StudentService studentService;
 
     @GetMapping("/select")
-    public String select() {
-        StudentVO select = studentService.select();
+    public List<StudentVO> select() {
+        List<StudentVO> select = studentService.select();
         System.out.println("hello world！");
-        return "hello world!";
+        return select;
     }
 
 }
