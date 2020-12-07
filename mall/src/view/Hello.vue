@@ -2,8 +2,9 @@
   <div>
     <h1>我是中国人</h1>
     <h2>我是中国人</h2>
-    <span v-for="item in student" >
+    <span v-for="item in student">
       <h3>{{item.id}}-{{item.name}}-{{item.age}}</h3>
+      <el-button type="primary" @click="clickButton">点击</el-button>
     </span>
   </div>
 </template>
@@ -21,12 +22,12 @@ export default {
   },
   methods: {
     login () {
-      // this.$axios.get('http://localhost:8080/goods/select').then(res => {
-      //   console.log(res);
-      // })
       register().then(res => {
         this.student = res.data
       })
+    },
+    clickButton() {
+      this.$router.push('/view/menu/navmenu')
     }
   }
 }

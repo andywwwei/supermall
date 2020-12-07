@@ -79,6 +79,9 @@
           awesome-vue
         </a>
       </li>
+      <li>
+        <button @click="returnHello">来了老弟</button>
+      </li>
     </ul>
   </div>
 </template>
@@ -94,6 +97,10 @@ export default {
   methods: {
     getGoods () {
 
+    },
+    returnHello () {
+
+      this.$router.push('hello')
     }
   }
 }
