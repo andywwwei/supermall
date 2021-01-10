@@ -2,19 +2,33 @@ server:
   port: 8080
 spring:
 #  main:
-#    allow-bean-definition-overriding: true  # ºöÂÔÖØÃûµÄfeign
+#    allow-bean-definition-overriding: true  # å¿½ç•¥é‡åçš„feign
 #  application:
 #    name: mall-goods
   datasource:
-    type: com.alibaba.druid.pool.DruidDataSource            # µ±Ç°Êı¾İÔ´²Ù×÷ÀàĞÍ
-    driver-class-name: com.mysql.jdbc.Driver             # mysqlÇı¶¯°ü
+    type: com.alibaba.druid.pool.DruidDataSource            # å½“å‰æ•°æ®æºæ“ä½œç±»å‹
+    driver-class-name: com.mysql.jdbc.Driver             # mysqlé©±åŠ¨åŒ…
     #    driver-class-name: com.mysql.jdbc.Driver
-    #    url: jdbc:mysql://192.168.1.11:3306/mall_goods?useSSL=false&serverTimezone=UTC&characterEncoding=utf8              # Êı¾İ¿âÃû³Æ
-    #    url: jdbc:mysql://192.168.1.16:3306/mall_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai       # Êı¾İ¿âÃû³Æ
-    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai       # Êı¾İ¿âÃû³Æ
+    #    url: jdbc:mysql://192.168.1.11:3306/mall_goods?useSSL=false&serverTimezone=UTC&characterEncoding=utf8              # æ•°æ®åº“åç§°
+    #    url: jdbc:mysql://192.168.1.16:3306/mall_goods?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai       # æ•°æ®åº“åç§°
+#    url: jdbc:mysql://localhost:3306/test?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai       # æ•°æ®åº“åç§°
+    url: jdbc:mysql://47.100.203.65:3306/runoob?useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai  # é˜¿é‡Œäº‘
     username: root
-    password: root
+#    password: root
+    password: andy@mysql
 
 mybatis:
   mapper-locations: classpath:com/mall/store/*Mapper.xml
   type-aliases-package: com.mall.store.item.entity
+
+logging:
+  level:
+    com:
+      mall:
+        store: debug
+  config:
+    classpath: logback-spring.xml
+  file:
+    #    path: ../log
+    path: ../data/logs
+debug: false
